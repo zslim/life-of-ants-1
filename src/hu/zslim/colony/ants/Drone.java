@@ -9,11 +9,16 @@ public class Drone extends MovingAnt {
 
     @Override
     public void move() {
+        position = position.makeAMove(QUEEN_POSITION);
 
     }
 
     @Override
     public void step() {
-
+        if (position.calculateDistance(QUEEN_POSITION) > 3) {
+            move();
+            System.out.println("This drone is at " + position);
+        } // TODO: implement mating attempt
     }
+
 }
