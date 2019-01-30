@@ -7,7 +7,7 @@ public class App {
         Colony colony = new Colony();
         System.out.println("Colony alive");
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 500; i++) {
             colony.step();
         }
     }

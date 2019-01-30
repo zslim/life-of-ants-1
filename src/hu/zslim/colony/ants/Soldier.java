@@ -18,6 +18,6 @@ public class Soldier extends MovingAnt {
     @Override
     public void step() {
         move();
-        System.out.println("This soldier is at " + position);
+//        System.out.println("This soldier is at " + position);
     }
 }

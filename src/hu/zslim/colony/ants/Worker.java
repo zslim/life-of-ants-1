@@ -17,6 +17,6 @@ public class Worker extends MovingAnt {
     @Override
     public void step() {
         move();
-        System.out.println("This worker is at " + position);
+//        System.out.println("This worker is at " + position);
     }
 }

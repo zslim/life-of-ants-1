@@ -9,7 +9,7 @@ import java.util.Random;
 public class Colony {
     private Random rnd = new Random();
     private static final int COLONY_SIZE = 100;
-    private Ant queen;
+    private Queen queen;
     private List<MovingAnt> workers;
     private List<MovingAnt> soldiers;
     private List<MovingAnt> drones;
@@ -34,7 +34,9 @@ public class Colony {
         List<MovingAnt> drones = new LinkedList<>();
         for (int i = 0; i < 10; i++) {
             Position randomPosition = new Position(rnd.nextInt(COLONY_SIZE), rnd.nextInt(COLONY_SIZE));
-            drones.add(new Drone(randomPosition));
+            Drone drone = new Drone(randomPosition);
+            drone.registerCallback(queen::handleMatingAttempt);
+            drones.add(drone);
         }
         this.drones = drones;
     }
